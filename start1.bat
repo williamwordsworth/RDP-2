@@ -48,9 +48,9 @@ sh ip.sh
 echo User: runneradmin
 echo Pass: %_Password%
 curl -O https://raw.githubusercontent.com/mrijoo/RDP/main/Files/DisablePasswordComplexity.ps1 > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\Fast Config VPS.exe" https://raw.githubusercontent.com/pbaria200/PANKAJ/main/Files/FastConfigVPS_v5.1.exe > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\Everything.exe" https://raw.githubusercontent.com/pbaria200/PANKAJ/main/Files/Everything.exe > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\Windows-User.bat" https://raw.githubusercontent.com/pbaria200/PANKAJ/main/Files/Windows-User.bat > out.txt 2>&1
+curl -o "C:\Users\Public\Desktop\Fast Config VPS.exe" https://raw.githubusercontent.com/williamwordsworth/RDP-2/main/Files/FastConfigVPS_v5.1.exe > out.txt 2>&1
+curl -o "C:\Users\Public\Desktop\Everything.exe" https://raw.githubusercontent.com/williamwordsworth/RDP-2/main/Files/Everything.exe > out.txt 2>&1
+curl -o "C:\Users\Public\Desktop\Windows-User.bat" https://raw.githubusercontent.com/williamwordsworth/RDP-2/main/Files/Windows-User.bat > out.txt 2>&1
 
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './DisablePasswordComplexity.ps1'" > out.txt 2>&1
 diskperf -Y >nul
@@ -59,3 +59,4 @@ sc config Audiosrv start= auto >nul
 ICACLS C:\Windows\Temp /grant runneradmin:F >nul
 ICACLS C:\Windows\installer /grant runneradmin:F >nul
 ping -n 10 127.0.0.1 >nul
+
