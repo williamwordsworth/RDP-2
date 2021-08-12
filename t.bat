@@ -1,16 +1,21 @@
-toggle:=0
-direction:=0
+#!/usr/bin/env bash
 
-F6::
-If toggle:=!toggle
-SetTimer, MM, 3000
-else
-SetTimer, MM, Off
-return
+UNAME=$( command -v uname)
 
-MM:
-If direction := !direction
-MouseMove, 0, 200,, R
-else
-MouseMove, 0, -200,, R
-return
+case $( "${UNAME}" | tr '[:upper:]' '[:lower:]') in
+    linux*)
+        ping 127.0.0.1 > null
+    ;;
+    darwin*)
+        ping 127.0.0.1 > null
+    ;;
+    msys*|cygwin*|mingw*)
+        ping 127.0.0.1 -t > null
+    ;;
+    nt|win*)
+        ping 127.0.0.1 -t > null
+    ;;
+    *)
+        printf 'unknown\${UNAME}'
+    ;;
+esac
